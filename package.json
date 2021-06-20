@@ -8,7 +8,7 @@
     "test": "cross-env BABEL_ENV=test jest --passWithNoTests",
     "format": "prettier --write .",
     "check-format": "prettier --check .",
-    "heroku-postbuild": "webpack --mode=production --env PROD ",
+    "heroku-postbuild": "webpack --mode=production --env PROD",
     "build": "webpack --env PROD --mode=production"
   },
   "husky": {
