@@ -2,11 +2,12 @@
   "name": "@atlasware/root-config",
   "scripts": {
     "start": "webpack serve --port 9000 --env isLocal",
+    "start:prod": "webpack serve --port 9000 --env PROD",
     "lint": "eslint src --ext js,ts,tsx",
     "test": "cross-env BABEL_ENV=test jest --passWithNoTests",
     "format": "prettier --write .",
     "check-format": "prettier --check .",
-    "build": "webpack --mode=production"
+    "build": "webpack --env PROD --mode=production"
   },
   "husky": {
     "hooks": {

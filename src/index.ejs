@@ -49,20 +49,32 @@
   </script>
     <% } %>
 
-      <!--
+      <% if (PROD) { %>
+        <script type="systemjs-importmap">
+        {
+          "imports": {
+            "@atlasware/root-config": "//localhost:9000/atlasware-root-config.js",
+            "@atlasware/login-mfe": "//atlasware-login.herokuapp.com/main.js",
+            "@atlasware/dashboard-mfe": "//localhost:4300/main.js"
+          }
+        }
+      </script>
+        <% } %>
+
+          <!--
     If you need to support Angular applications, uncomment the script tag below to ensure only one instance of ZoneJS is loaded
     Learn more about why at https://single-spa.js.org/docs/ecosystem-angular/#zonejs
   -->
-      <script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.min.js"></script>
 
-      <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
-      <% if (isLocal) { %>
-        <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.js"></script>
-        <% } else { %>
-          <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
-          <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
-          <% } %>
+          <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
+          <% if (isLocal) { %>
+            <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.js"></script>
+            <% } else { %>
+              <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
+              <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
+              <% } %>
 </head>
 
 <body>
