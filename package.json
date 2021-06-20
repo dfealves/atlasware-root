@@ -45,6 +45,7 @@
     "@types/jest": "^26.0.16",
     "@types/systemjs": "^6.1.0",
     "@types/webpack-env": "^1.16.0",
+    "cors": "^2.8.5",
     "single-spa": "^5.8.2"
   }
 }
