@@ -1,13 +1,14 @@
 {
   "name": "@atlasware/root-config",
   "scripts": {
-    "start": "webpack serve --port 9000 --env isLocal",
+    "start": "node server.js",
+    "dev": "webpack serve --port 9000 --env isLocal",
     "start:prod": "webpack serve --port 9000 --env PROD",
     "lint": "eslint src --ext js,ts,tsx",
     "test": "cross-env BABEL_ENV=test jest --passWithNoTests",
     "format": "prettier --write .",
     "check-format": "prettier --check .",
-    "heroku-postbuild": "webpack --env PROD --mode=production --deploy-url http://atlasware-root-config.herokuapp.com/",
+    "heroku-postbuild": "webpack --env PROD --mode=production",
     "build": "webpack --env PROD --mode=production"
   },
   "husky": {
@@ -48,5 +49,9 @@
     "@types/webpack-env": "^1.16.0",
     "cors": "^2.8.5",
     "single-spa": "^5.8.2"
+  },
+  "engines": {
+    "node": "12.16.3",
+    "npm": "6.14.11"
   }
 }
